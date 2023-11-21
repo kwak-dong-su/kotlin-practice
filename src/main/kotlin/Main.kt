@@ -57,6 +57,13 @@ fun castFunc(a: Any?) {
     else println(a)
 }
 
+fun <T> ArrayList<T>.extensionFunc(index: Int = 0) {
+    if (index < this.size) {
+        println(this[index])
+        this.extensionFunc(index + 1)
+    }
+}
+
 
 fun main(args: Array<String>) {
 //    calculateFunc()
@@ -71,6 +78,8 @@ fun main(args: Array<String>) {
 //    castFunc("안녕하세요")
 //    castFunc(5)
 //    castFunc(5.12313)
+
+    arrayListOf("Java", "Kotlin", "Python").extensionFunc()
 
 
 
