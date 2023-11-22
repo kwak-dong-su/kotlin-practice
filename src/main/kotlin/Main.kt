@@ -1,5 +1,6 @@
 import live.Animal
 import live.Person
+import robot.RobotA
 
 fun calculateFunc() {
     println(max(3, 5))
@@ -65,6 +66,17 @@ fun <T> ArrayList<T>.extensionFunc(index: Int = 0) {
     }
 }
 
+fun interfaceFunc() {
+    val robotA = RobotA()
+    robotA.introduce()
+    robotA.stop()
+    robotA.move()
+    robotA.move()
+    robotA.stop()
+    robotA.upgrade()
+    robotA.upgrade(5)
+}
+
 
 fun main(args: Array<String>) {
 //    calculateFunc()
@@ -80,7 +92,9 @@ fun main(args: Array<String>) {
 //    castFunc(5)
 //    castFunc(5.12313)
 
-    arrayListOf("Java", "Kotlin", "Python").extensionFunc()
+//    arrayListOf("Java", "Kotlin", "Python").extensionFunc()
+
+    interfaceFunc()
 
 
 
