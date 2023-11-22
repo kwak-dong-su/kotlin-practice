@@ -46,12 +46,29 @@ fun objectFunc() {
     val func = FuncJava()
     func.createAnimal()
     func.createAnimal("강아지", 4)
+
+    println(tiger.hashCode())
+    println(tiger == Animal("호랑이", 4))
+    println(tiger === Animal("호랑이", 4))
+
 }
 
 fun operatorFunc(text: String?) {
     println(text?.length)
     println(text?.length ?: "null 변수입니다")
     println(text!!.length)
+
+    var text2 = "안녕하세요, 반갑습니다. 222"
+    println(text == text2)
+    println(text === text2)
+    println(text.hashCode())
+    println(text2.hashCode())
+
+    text2 = "안녕하세요, 반갑습니다."
+    println(text == text2)
+    println(text === text2)
+    println(text.hashCode())
+    println(text2.hashCode())
 }
 
 fun castFunc(a: Any?) {
@@ -99,7 +116,8 @@ fun main(args: Array<String>) {
 
 //    arrayListOf("Java", "Kotlin", "Python").extensionFunc()
 
-    interfaceFunc()
+//    interfaceFunc()
+
 
 
 
