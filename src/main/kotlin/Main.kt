@@ -41,8 +41,9 @@ fun objectFunc() {
     val chul = Person("철수", 20)
     println(chul)
 
-//    val func = FuncJava()
-//    func.createAnimal()
+    val func = FuncJava()
+    func.createAnimal()
+    func.createAnimal("강아지", 4)
 }
 
 fun operatorFunc(text: String?) {
