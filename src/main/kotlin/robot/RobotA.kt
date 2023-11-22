@@ -1,8 +1,12 @@
 package robot
 
-class RobotA : Robot {
+class RobotA : Robot, Introduce {
     private var isMoving = false
     private var grade = 1
+    override fun introduce() {
+        super<Introduce>.introduce()
+        super<Robot>.introduce()
+    }
 
     override fun move() {
         if(!isMoving) {
