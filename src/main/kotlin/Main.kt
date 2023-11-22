@@ -1,6 +1,7 @@
 import live.Animal
 import live.Person
 import robot.RobotA
+import robot.RobotB
 
 fun calculateFunc() {
     println(max(3, 5))
@@ -75,6 +76,10 @@ fun interfaceFunc() {
     robotA.stop()
     robotA.upgrade()
     robotA.upgrade(5)
+
+    val robotB = RobotB()
+    robotB.move()
+    robotB.introduce()
 }
 
 
