@@ -99,6 +99,15 @@ fun interfaceFunc() {
     robotB.introduce()
 }
 
+fun declareDataClassFunc() {
+    val person = Person("마동석", 24)
+    val (name, age) = person
+    println("$name $age")
+
+    person.name = "유재석"
+    //compile error
+//    person.age = 25
+}
 
 fun main(args: Array<String>) {
 //    calculateFunc()
@@ -118,7 +127,7 @@ fun main(args: Array<String>) {
 
 //    interfaceFunc()
 
-
+    declareDataClassFunc()
 
 
 
