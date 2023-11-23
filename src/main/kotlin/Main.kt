@@ -1,3 +1,5 @@
+import color.Color
+import color.getColorName
 import live.Animal
 import live.Person
 import robot.RobotA
@@ -100,13 +102,21 @@ fun interfaceFunc() {
 }
 
 fun declareDataClassFunc() {
-    val person = Person("마동석", 24)
-    val (name, age) = person
-    println("$name $age")
+    val animal = Animal("얼룩말", 4)
+    val (name, foot) = animal
+    println("$name $foot")
 
-    person.name = "유재석"
+    animal.name = "고양이"
+    println(animal)
     //compile error
-//    person.age = 25
+//    animal.foot = 10
+}
+
+fun enumFunc() {
+    println(Color.ORANGE)
+    println(Color.ORANGE.rgb())
+    println(Color.valueOf(Color.BLUE.name).b)
+    println(getColorName(Color.YELLOW))
 }
 
 fun main(args: Array<String>) {
@@ -129,6 +139,7 @@ fun main(args: Array<String>) {
 
     declareDataClassFunc()
 
+    enumFunc()
 
 
 
