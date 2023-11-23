@@ -119,6 +119,15 @@ fun enumFunc() {
     println(getColorName(Color.YELLOW))
 }
 
+fun lambdaFunc() {
+    val square = {num: Int -> num * num}
+    println(square(5))
+
+    val isGreaterThan : Int.(Int) -> Boolean = {this > it}
+    println(3.isGreaterThan(5))
+
+}
+
 fun main(args: Array<String>) {
 //    calculateFunc()
 
@@ -137,10 +146,11 @@ fun main(args: Array<String>) {
 
 //    interfaceFunc()
 
-    declareDataClassFunc()
+//    declareDataClassFunc()
 
-    enumFunc()
+//    enumFunc()
 
+    lambdaFunc()
 
 
     // Try adding program arguments via Run/Debug configuration.
