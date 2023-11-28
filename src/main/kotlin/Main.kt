@@ -128,6 +128,14 @@ fun lambdaFunc() {
 
 }
 
+fun highOrderFunc() {
+    val result = proceed(5, 3, ::mul)
+    println(result)
+    val result2 = proceed(5, 3) { a: Int, b: Int -> a + b }
+    println(result2)
+}
+
+
 fun main(args: Array<String>) {
 //    calculateFunc()
 
@@ -150,8 +158,9 @@ fun main(args: Array<String>) {
 
 //    enumFunc()
 
-    lambdaFunc()
+//    lambdaFunc()
 
+    highOrderFunc()
 
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
