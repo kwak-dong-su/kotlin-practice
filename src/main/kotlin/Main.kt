@@ -133,6 +133,10 @@ fun highOrderFunc() {
     println(result)
     val result2 = proceed(5, 3) { a: Int, b: Int -> a + b }
     println(result2)
+
+    val reflection = ::max
+    val result3 = reflection.invoke(999, 1000)
+    println(result3)
 }
 
 
