@@ -139,6 +139,21 @@ fun highOrderFunc() {
     println(result3)
 }
 
+fun controlFlowFunc() {
+
+    when ("Hello") {
+        // Checks whether obj equals to "1"
+        "1" -> println("One")
+        // Checks whether obj equals to "Hello"
+        "Hello" -> println("Greeting")
+        // Default statement
+        else -> println("Unknown")
+    }
+
+    val lam = {text: String -> print(text) }
+    println(lam("dsa"))
+}
+
 
 fun main(args: Array<String>) {
 //    calculateFunc()
@@ -164,7 +179,9 @@ fun main(args: Array<String>) {
 
 //    lambdaFunc()
 
-    highOrderFunc()
+//    highOrderFunc()
+
+    controlFlowFunc()
 
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
