@@ -63,19 +63,42 @@ fun variableFunc() {
 }
 
 fun objectFunc() {
+    // 코틀린으로 정의한 Animal 객체 생성
     val tiger = Animal("호랑이", 4)
+    // toString 함수 호출 (Animal 클래스에서 오버라이드하여 재정의)
     println(tiger)
 
+    // 코틀린으로 정의한 Person 객체 생성 및 오버라이드한 toString 함수 호출
     val chul = Person("철수", 20)
     println(chul)
 
+    // Java 언어로 작성한 클래스 객체 선언
     val func = FuncJava()
+
+    // 자바에서 임의로 정의한 Animal 객체 생성
+    // 현재 자바 클래스에서 작성한 한글 문자열을
+    // 코틀린으로 작성한 클래스에 넘겨 출력 시 글자가 깨지는 현상 있음
+    // 호출한 toString 함수에서 name 변수가 깨져 출력 됨
+    // 현재 넘기지 않아도 자바에서 한글 출력 시 깨지는 것으로 확인
     func.createAnimal()
+
+    // 이름은 '강아지', 발이 4개인 Animal 객체 생성
     func.createAnimal("강아지", 4)
 
+    // data class 에서 제공하는 hashCode 함수 출력
     println(tiger.hashCode())
+
+    // ==는 변수의 값이 같거나, 객체의 내부 값이 모두 같을 때 true 출력 (자바의 equals)
     println(tiger == Animal("호랑이", 4))
+    // ===는 객체의 주소 값이 같을 때 true 출력
     println(tiger === Animal("호랑이", 4))
+
+    println("asd".hashCode())
+    println("asd".hashCode())
+    println(1.hashCode())
+    println(1.hashCode())
+    println(5.hashCode())
+    println(tiger.foot.hashCode())
 
 }
 
@@ -205,7 +228,7 @@ fun main(args: Array<String>) {
 
 //    highOrderFunc()
 
-    controlFlowFunc()
+//    controlFlowFunc()
 
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
