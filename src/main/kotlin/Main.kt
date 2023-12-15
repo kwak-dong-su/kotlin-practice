@@ -14,28 +14,52 @@ fun calculateFunc() {
 
 fun variableFunc() {
     val languages = arrayListOf("Java")
+
+    // val 타입이지만 리스트 내부 값은 변경 가능
     languages.add("Kotlin")
+
+    // val 타입이므로 재할당 불가능. 컴파일 에러
 //    languages = arrayListOf("Python")
+
+    // 문자열 안에서 '$' 접두어 사용 시 변수 출력 가능
     println("languages: $languages")
 
     var list2 = arrayListOf("C")
     println("list2: $list2")
+
+    // var 타입이므로 재할당 가능 (최초 할당한 타입과 동일할 경우만)
     list2 = arrayListOf("C++")
     println("list2: $list2")
 
+    // 다른 타입으로의 재할당은 불가능 (array list -> list)
+//    list2 = listOf("C#")
+
     var num1 = 1
     num1 = 2
+
+    // num1은 Int 타입으로 선언했으므로 컴파일 에러 (Int -> String)
 //    num1 = "1"
 
     val num2 = 1
+
+    // val 타입으므로 재할당 불가능
 //    num2 = 2
 
+    // 모든 변수는 객체 타입. 해당하는 타입에 정의된 함수 호출 가능
     "1".toString()
 
+    // 변수 선언 시 초기화 가능한 타입 선언 가능.
+    // '?' 접미사는 null 허용 여부(기본적으로 코틀린 변수는 null 할당 불가)
     var text1: String? = "1"
     var num3: Int? = null
 
+    // nullable 변수는 접근 제어자 바로 사용 불가능(컴파일 에러).
+    // '?.' 연산자를 사용해 내부 변수 및 함수 접근 가능
+    // text1 값이 null 일 시, text1?.length 값은 null 반환
     println(text1?.length)
+
+    // '?.' 접근 제어자를 사용하지 않는다면 컴파일 에러
+    println(num3?.compareTo(1))
 }
 
 fun objectFunc() {
