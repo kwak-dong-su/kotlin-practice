@@ -103,19 +103,40 @@ fun objectFunc() {
 }
 
 fun operatorFunc(text: String?) {
+    // 컴파일 에러. nullable 변수는 접근자를 바로 사용할 수 없음
+//    println(text.length)
+
+    // ?. 연산자는 text 값이 null 일 시 null 리턴
     println(text?.length)
+
+    // ?: 연산자는 text 값이 null 일 시 length 대신 우측의 내용을 리턴
     println(text?.length ?: "null 변수입니다")
+
+    // !!. 연산자는 text 값이 null 일 시 exception 출력
     println(text!!.length)
 
     var text2 = "안녕하세요, 반갑습니다. 222"
+
+    // 두 변수 안의 값이 다르므로 false
     println(text == text2)
+    // 두 변수의 주소 값이 다르므로 false
     println(text === text2)
+
+    // 두 변수의 해시코드가 다르므로 다른 메모리를 참조
     println(text.hashCode())
     println(text2.hashCode())
 
     text2 = "안녕하세요, 반갑습니다."
+
+    // 두 변수 안의 값이 같으므로 true
     println(text == text2)
+    // 재할당한 text2의 값은 text의 값과 같아짐. 이에 JVM은 같은 메모리를 참조하도록 최적화
+    // 따라서 결과는 true
     println(text === text2)
+
+    // 두 변수는 같은 메모리를 참조하므로 해시코드 값이 동일
+    // 64비트 운영체제에서는 메모리 주소 값이 서로 다른 객체일지라도
+    // 같은 해시코드 값을 가질 가능성 있음
     println(text.hashCode())
     println(text2.hashCode())
 }
