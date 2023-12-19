@@ -226,9 +226,17 @@ fun enumFunc() {
 }
 
 fun lambdaFunc() {
+    // Int 타입의 변수를 파라미터로 받는 함수를 선언
+    // 그 수를 제곱한 결과를 리턴
+    // val square : (Int) -> Int = {num: Int -> num * num} 와 같음
+    // 함수 타입은 (Int) -> Int 와 같이 '인자 값 -> 리턴 값' 형식으로 정의
+    // 타입 생략 가능
     val square = {num: Int -> num * num}
     println(square(5))
 
+    // 람다 표현식을 이용해 정의한 확장 함수
+    // Int 타입 객체에 대해 적용 가능한 확장 함수
+    // 호출한 객체의 값이 파리미터 값 보다 크다면 true 반환
     val isGreaterThan : Int.(Int) -> Boolean = {this > it}
     println(3.isGreaterThan(5))
 
@@ -280,7 +288,7 @@ fun main(args: Array<String>) {
 
 //    interfaceFunc()
 
-    declareDataClassFunc()
+//    declareDataClassFunc()
 
 //    enumFunc()
 
