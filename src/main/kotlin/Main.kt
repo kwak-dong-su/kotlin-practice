@@ -199,13 +199,22 @@ fun interfaceFunc() {
 }
 
 fun declareDataClassFunc() {
+    // Animal 객체 생성
     val animal = Animal("얼룩말", 4)
+
+    // data class에서 지원하는 componentN() 함수는
+    // 클래스 내에 정의하였던 변수를 순서대로 리턴
+    println(animal.component1())
+    println(animal.component2())
+
+    // animal 객체 내 변수를 componentN() 함수를 사용하여 순서에 맞게 분해 선언 가능
     val (name, foot) = animal
     println("$name $foot")
 
     animal.name = "고양이"
     println(animal)
-    //compile error
+
+    // val 변수이므로 재할당 불가능. 컴파일 에러
 //    animal.foot = 10
 }
 
@@ -271,7 +280,7 @@ fun main(args: Array<String>) {
 
 //    interfaceFunc()
 
-//    declareDataClassFunc()
+    declareDataClassFunc()
 
 //    enumFunc()
 
