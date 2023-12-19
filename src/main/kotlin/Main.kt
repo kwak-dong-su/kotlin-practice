@@ -176,7 +176,13 @@ fun <T> ArrayList<T>.extensionFunc(index: Int = 0) {
 }
 
 fun interfaceFunc() {
+    // RobotA 객체 생성 (Robot 인터페이스, introduce 인터페이스를 구현한 클래스)
     val robotA = RobotA()
+
+    // 위의 두 인터페이스 모두 introduce 함수를 구현하게 되어있음
+    // 구현할 메소드가 중복이므로 컴파일 에러
+    // 이런 경우엔 introduce() 메소드를 RobotA 클래스에서 반드시 override 해주어야 함
+    // 그 외 나머지 구현 함수 호출하였음
     robotA.introduce()
     robotA.stop()
     robotA.move()
@@ -185,6 +191,8 @@ fun interfaceFunc() {
     robotA.upgrade()
     robotA.upgrade(5)
 
+    // RobotB 객체 생성 (Java로 작성한 코드)
+    // 현재 Java로 작성한 introduce 함수 한글 깨짐 현상
     val robotB = RobotB()
     robotB.move()
     robotB.introduce()
