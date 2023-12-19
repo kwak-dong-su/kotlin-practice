@@ -243,11 +243,17 @@ fun lambdaFunc() {
 }
 
 fun highOrderFunc() {
+    // 코틀린에선 함수 자체를 파라미터로 넘길 수 있는 고차 함수를 지원
+    // operand 값에 mul 함수를 적용. 리턴 값에 대해 다시 mul 함수를 반복 수행 (times 횟수 만큼)
     val result = proceed(5, 3, ::mul)
     println(result)
+
+    // 파라미터의 마지막 인자로 함수를 받을 때, 람다 식이 온다면 아래처럼 괄호 밖으로 표현이 가능
     val result2 = proceed(5, 3) { a: Int, b: Int -> a + b }
     println(result2)
 
+    // 코틀린에선 Reflection 클래스를 '::' 접두어로 표현이 가능 (자바의 .class)
+    // invoke 함수를 호출하여 max 함수를 수행 가능
     val reflection = ::max
     val result3 = reflection.invoke(999, 1000)
     println(result3)
