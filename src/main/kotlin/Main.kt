@@ -142,9 +142,17 @@ fun operatorFunc(text: String?) {
 }
 
 fun castFunc(a: Any?) {
+    // as 연산자는 특정 변수를 지정한 타입으로 형변환
+    // 변환할 수 없으면 exception 출력
+    // as? 연산자는 변환할 수 없으면 null 반환
     val value = a as? Int
-    if(value is Int) println("$value * $value = ${value * value}")
+
+    // a 값의 타입이 Int 일 시, if문 안에서 value 타입은 Int 타입으로 자동 형변환 (스마트 캐스트)
+    if(a is Int) println("$a * $a = ${a * a}")
     else println(a)
+
+    // !! 연산자는 해당 값이 null 일 시 exception 출력
+    println(value!!.hashCode())
 }
 
 fun <T> ArrayList<T>.extensionFunc(index: Int = 0) {
@@ -236,6 +244,7 @@ fun main(args: Array<String>) {
 //    castFunc("안녕하세요")
 //    castFunc(5)
 //    castFunc(5.12313)
+//    castFunc(null)
 
 //    arrayListOf("Java", "Kotlin", "Python").extensionFunc()
 
