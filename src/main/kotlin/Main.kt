@@ -156,8 +156,21 @@ fun castFunc(a: Any?) {
 }
 
 fun <T> ArrayList<T>.extensionFunc(index: Int = 0) {
+    // 기존 클래스에 함수를 추가적으로 정의 가능
+    // fun '적용할 클래스 이름'.'함수 이름'(파라미터 값) {...} 형식으로 정의 가능
+    // 모든 타입이 올 수 있는 ArrayList<T> 객체에서 호출할 수 있는
+    // extensionFunc() 확장 함수를 선언하였음
+
+    // this 키워드는 해당 위치에서 가장 가까운 범위의 클래스를 가져옴
+    // 가장 가까운 클래스는 ArrayList 클래스
+    // this.size는 호출한 대상 ArrayList의 길이
     if (index < this.size) {
+        // index 위치의 ArrayList 값
         println(this[index])
+        // this@extensionFunc 형태로 this의 대상을 명시 가능
+        println(this@extensionFunc[index])
+
+        // this는 ArrayList 객체이므로 extensionFunc 함수를 호출 가능
         this.extensionFunc(index + 1)
     }
 }
@@ -262,5 +275,5 @@ fun main(args: Array<String>) {
 
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+    // println("Program arguments: ${args.joinToString()}")
 }
